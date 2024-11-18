@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bus Pass Management System</title>
+</head>
+
+<body class="bg-[#f4f4f4]  bg[url('photo1.png')] bg-cover bg-no-repeat bg-fixed m-0 p-0 flex justify-center items-center   ">
+    <div class="container bg-[#ffffffa9] p-[20px] rounded-lg shadow w-full  max-w-96 mx-3 my-5 ">
+        <h1 class="text-center text-[#0070c9] mb-[28px] text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px] font-bold">Apply for a New Bus Pass</h1>
+        <hr class="mb-4  ">
+        <form id="busPassForm" action="apply.php" method="post">
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px]  text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px] font-bold" for="name">Full Name:</label>
+                <input class="w-full  py-1.5 px-2  border-2 border-[#ccc] rounded box-border h-[35px] md:h-[40px]  " type="text" id="name"
+                    name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px] font-bold" for="dob">Date of Birth:</label>
+                <input class="w-full py-1.5 px-2  border-2 border-[#ccc] rounded box-border  h-[35px] md:h-[40px]  " type="date" id="dob" name="dob"
+                 required>
+            </div>
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px]  font-bold" for="address">Address:</label>
+                <textarea class="w-full py-1.5 px-2  border-2 border-[#ccc] rounded box-border resize-y " id="address"
+                    name="address" placeholder="Address" required></textarea>
+            </div>
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px]  font-bold" for="email">Email:</label>
+                <input class="w-full py-1.5 px-2  border-2 border-[#ccc] rounded box-border  h-[35px] md:h-[40px]" type="email" id="email"
+                    name="email"  placeholder="Email" required>
+            </div>
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px]  font-bold" for="phone">Phone Number:</label>
+                <input class="w-full py-1.5 px-2  border-2 border-[#ccc] rounded box-border  h-[35px] md:h-[40px]" type="tel" id="phone"
+                    name="phone"  placeholder="Phone Number" required>
+            </div>
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px]  font-bold" for="phone">Stoppage:</label>
+                <input class="w-full py-1.5 px-2  border-2 border-[#ccc] rounded box-border  h-[35px] md:h-[40px]" type="text" id="Stoppage"
+                    name="Stoppage"  placeholder="Stoppage" required>
+            </div>
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px]  font-bold" for="photo">Upload Photo:</label>
+                <input class="w-full  py-1.5 px-2 border-2 border-[#ccc] rounded box-border  h-[35px] md:h-[40px] text-[10px] md:text-[12px] bg-white" type="file" id="photo"
+                    name="photo" accept="image/*" required>
+            </div>
+            <!-- <div class="form-group">
+                <label for="idProof">Upload ID Proof:</label>
+                <input type="file" id="idProof" name="idProof" accept="application/pdf,image/*" required>
+            </div> -->
+            <div class="form-group mb-[15px]">
+                <label class="block mb-[10px] text-[#000000] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text[22px]  font-bold" for="signature">Signature:</label>
+                <input class="w-full py-1.5 px-2 border-2 border-[#ccc] rounded box-border  h-[35px] md:h-[40px] text-[10px] md:text-[12px] bg-white" type="file" id="signature"
+                    name="signature" accept="application/pdf,image/*" required>
+            </div>
+
+            <div class="form-group mb-[15px] ">
+                <button
+                    class=" w-1/4 h-8 py-0.5 text-[12px] sm:text-[12px] md:text-[14px]  md:h-10  md:w-1/3  lg:text-[18px] xl:text-[20px] 2xl:text-[22px] bg-[#28a745] text-white border-none rounded-[6px]  md:rounded cursor-pointer  hover:bg-[#218838] mt-4 "
+                    type="submit" > Apply</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('busPassForm').addEventListener('submit', function (event) {
+            // Simple client-side validation could be added here
+            var name = document.getElementById('name').value;
+            var dob = document.getElementById('dob').value;
+            var address = document.getElementById('address').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var photo = document.getElementById('photo').value;
+            var Stoppage = document.getElementById('Stoppage').value;
+            var sing = document.getElementById('signature').value;
+
+            if (!name || !dob || !address || !email || !phone || !photo || !Stoppage || !sing) {
+                alert("Please fill in all required fields.");
+                event.preventDefault(); // Prevent the form from submitting
+            } else {
+                alert("Form submitted successfully!");
+            }
+
+        });
+    </script>
+</body>
+
+</html>
