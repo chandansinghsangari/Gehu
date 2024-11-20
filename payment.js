@@ -21,6 +21,7 @@ document.getElementById("paymentMethod").addEventListener("change", function () 
     }
   });
   
+  
   document.getElementById("payNow").addEventListener("click", function () {
     const method = document.getElementById("paymentMethod").value;
     const statusMessage = document.getElementById("statusMessage");
