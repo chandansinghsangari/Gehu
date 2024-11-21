@@ -86,7 +86,7 @@
 
         <!-- Signup Form -->
         <form id="signupForm" style="display: none;">
-            <input type="text" id="fistname" placeholder="First Name" required>
+            <input type="text" id="firstname" placeholder="First Name" required>
             <input type="text" id="lastName" placeholder="Last Name" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Password" required>
@@ -115,7 +115,7 @@
 
         document.getElementById('signupForm').addEventListener('submit', function (event) {
             // Simple client-side validation could be added here
-            var fistname = document.getElementById('fistname').value;
+            var fistname = document.getElementById('firstname').value;
             var lastName = document.getElementById('lastName').value;
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
